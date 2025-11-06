@@ -1,0 +1,11 @@
+sysuse nlsw88
+ tab race
+  tab race,nolabel
+  gen race1=0 if race==1
+  replace race1=1 if race==1
+  replace race1=0 if race==2
+  replace race1=0 if race==3
+  label define today 1 "white" 0 "colour"
+  label value race1 today
+tab race1
+tab race1,nolabel
