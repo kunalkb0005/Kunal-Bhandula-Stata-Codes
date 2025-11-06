@@ -1,0 +1,9 @@
+describe
+tab gender
+su
+tab gender,nolabel
+encode gender,gen(gender1)
+reg salary i.gender1
+reg salary age yearsofexperience i.gender1
+encode educationlevel,gen(educationlevel1)
+reg salary educationlevel1#i.gender1 i.gender1 i.educationlevel1
