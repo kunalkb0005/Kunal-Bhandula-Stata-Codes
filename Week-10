@@ -1,0 +1,26 @@
+sysuse nlsw88
+tab race
+ tab race,nolabel
+gen white=1 if race==1
+ br race white
+replace white=0 if race==2
+ br race white
+replace white=0 if race==3
+drop white
+gen white=1 if race==1
+replace white=0 if white==1
+ gen black=0 if race==2
+replace black=0 if black==0
+replace black=0 if black==2
+replace black=0 if black==3
+replace black=0 if black==1
+ tab white
+tab black
+gen new=age+race
+egen new1=mean(age)
+br age new1
+egen new2=max(age)
+br age new2
+br age white
+bys white:egen mean_age=mean(age)
+br age white mean_age
