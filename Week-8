@@ -1,0 +1,25 @@
+sysuse nlsw88
+describe
+tab race
+tab race,nolabel
+reg wage race ttl_exp
+reg wage ttl_exp i.race
+reg wage ttl_exp i.race#c.ttl_exp
+reg wage race ttl_exp i.race#c.ttl_exp
+reg wage race ttl_exp i.race i.race#c.ttl_exp
+reg wage ttl_exp ib2.race i.race#c.ttl_exp
+reg wage ttl_exp ib3.race i.race#c.ttl_exp
+reg wage i.race i.c_city
+reg wage i.race#i.c_city
+reg wage i.race i.c_city i.race#i.c_city
+su wage
+su tenure
+tab industry
+tab industry,nolabel
+reg wage industry tenure
+reg wage tenure i.industry
+reg wage tenure i.industry#c.tenure
+reg wage tenure i.industry i.industry#c.tenure
+tab industry
+tab industry,nolabel
+reg wage tenure i.industry#c.tenure i.industry
