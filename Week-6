@@ -1,0 +1,12 @@
+sysuse nlsw88
+tab race
+drop if race==3
+tab race
+ttest wage,by(race)
+describe
+ttest ttl_exp,by(race)
+mean ttl_exp
+db ttest
+ttest wage, by(race)
+db reg
+regress race ttl_exp wage
