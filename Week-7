@@ -1,0 +1,9 @@
+sysuse auto
+describe
+tab foreign
+tab foreign,nolabel
+reg price mpg
+reg price i.foreign
+reg price i.foreign mpg
+reg price i.foreign mpg i.foreign#c.mpg
+avplots
