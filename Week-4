@@ -1,0 +1,11 @@
+rename
+tab sector
+tab sector gender
+tab cooking sector
+tab cooking sector,row
+tab sector cooking,roW
+tab sector cooking,column
+ tab sector cooking,cell
+ encode sector,gen(sector1)
+encode level,gen(level1)
+table sector1 level1,stat(mean income)
